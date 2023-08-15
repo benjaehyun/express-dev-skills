@@ -14,5 +14,5 @@ function getAll() {
 }
 
 function getConfidence(confidence) {
-    return skills.includes(confidence)
+    return skills.find(skill => skill.confidence === confidence)
 }

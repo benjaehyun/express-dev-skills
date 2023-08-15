@@ -11,18 +11,10 @@
     | 
     <a href="/skills">All Skills</a> 
 
-    <h1>Skills</h1>
-    <ul>
-        <% skills.forEach(function(s) { %> 
-            <% if(s.confidence ===  ) %>
-                <li>
-                    <%=s.topic%>
-                    - 
-                    <%= s.skill %>
-                    - 
-                    <%=s.confidence%> 
-                </li>
-       <% }) %>
-    </ul>
+    <h3>topic: <%= skill.topic%></h3>
+    - 
+    <h3>skill: <%= skill.skill%></h3>
+    -
+    <h3>confidence: <%= skill.confidence%></h3>
 </body>
 </html>
