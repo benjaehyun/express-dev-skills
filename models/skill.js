@@ -1,18 +1,40 @@
 const skills = [
-    {topic: 'javascript', skill: 'recursive functions', confidence: 'low'},
-    {topic: 'html', skill: 'element heirarchy', confidence: 'high'},
-    {topic: 'css', skill: 'reactive sizing', confidence: 'medium'}
+    {id: 236, skill: 'recursive functions', confidence: 'low'},
+    {id: 654, skill: 'element heirarchy', confidence: 'high'},
+    {id: 964, skill: 'reactive sizing', confidence: 'medium'}
 ]
 
 module.exports = {
     getAll, 
-    getConfidence
+    getOne, 
+    create, 
+    deleteOne, 
+    update
+}
+
+function update(id, updatedSkill) {
+    id = parseInt(id)
+    const skill = skills.find(skill => skill.id === id)
+    Object.assign(confidence, updatedSkill)
+}
+
+function deleteOne(id) {
+    id = parseInt(id)
+    const idx = skills.findIndex(skill => skill.id === id) 
+    skills.splice(idx, 1)
+}
+
+function create(skill) {
+    skill.id = Date.now() % 1000000000
+    skill.confidence = 'null'
+    skills.push(skill)
+}
+
+function getOne(id) {
+    id = parseInt(id)
+    return skills.find(skill => skill.id === id)
 }
 
 function getAll() {
     return skills
-}
-
-function getConfidence(confidence) {
-    return skills.find(skill => skill.confidence === confidence)
 }

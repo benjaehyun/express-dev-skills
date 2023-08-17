@@ -12,14 +12,13 @@
     <ul>
         <% skills.forEach(function(s) { %> 
             <li>
-                <%=s.topic%>
-                - 
-                <%= s.skill %>
+                <a href="/skills/<%= s.id %>"> <%=s.skill%> </a>
                 - 
                 confidence: 
-                <a href="/skills/<%= s.confidence %>"> <%=s.confidence%> </a>
+                <%=s.confidence%>
             </li>
        <% }) %>
     </ul>
+    <a href="/skills/new">Add Skills</a>
 </body>
 </html>
