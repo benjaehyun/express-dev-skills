@@ -26,7 +26,6 @@ function deleteOne(id) {
 
 function create(skill) {
     skill.id = Date.now() % 1000000000
-    skill.confidence = 'null'
     skills.push(skill)
 }
 
